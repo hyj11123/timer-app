@@ -1,0 +1,25 @@
+.p_box {
+  width: 1000px;
+  height: 150px;
+  border: 1px solid #0b0b0b;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.p_box .p_box__desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.p_box .p_box__desc span {
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #0b0b0b;
+  padding: 10px;
+  border-bottom: 1px solid #0b0b0b;
+}

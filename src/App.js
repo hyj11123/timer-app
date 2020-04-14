@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles/main.css";
+import emp from "./database/db";
+import ProfileBox from "./components/ProfileBox";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      empList: [],
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      empList: emp,
+    });
+  }
+
+  render() {
+    const { empList } = this.state;
+
+    return (
+      <div className="box">
+        <ProfileBox />
+        <div className="box__content">
+          {empList.length !== 0 ? (
+            empList.map((doc) => {
+              return (
+                <ProfileBox
+                  avatar={doc.avatar}
+                  age={doc.age}
+                  name={doc.name}
+                  school={doc.school}
+                  gender={doc.gender}
+                />
+              );
+            })
+          ) : (
+            <div>데이터 없음</div>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

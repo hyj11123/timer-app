@@ -1,0 +1,25 @@
+@import "./reset.css";
+
+body {
+  background-color: #777;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.box .box__content {
+  width: 1200px;
+  margin-top: 40px;
+  background-color: #fff;
+  box-shadow: 3px 2px 8px #0b0b0b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
